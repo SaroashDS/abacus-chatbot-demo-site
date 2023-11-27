@@ -76,15 +76,37 @@
 		}
 
 		df-messenger {
-		   --df-messenger-button-titlebar-color: #0d4295;
-		   --df-messenger-chat-background-color: #fafafa;
-		   --df-messenger-send-icon: #0d4295;
+			/* Other styles */
+			--df-messenger-button-titlebar-color: #0f4394; /* Dark blue title bar */
+		}
+
+		df-messenger::shadow df-messenger-chat .df-messenger-titlebar {
+			height: 56px; /* Increase height of the title bar */
+			font-size: 16px; /* Adjust font size as needed */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		/* Force the title within the chatbot to be "Try Me Now" */
+		df-messenger::shadow df-messenger-chat .df-messenger-titlebar div[role="heading"] {
+			font-size: 0 !important; /* Hide the original text by setting font size to 0 */
+		}
+
+		df-messenger::shadow df-messenger-chat .df-messenger-titlebar div[role="heading"]:after {
+			content: 'Try Me Now'; /* Add new text */
+			font-size: 16px !important; /* Set the font size back to normal for new text */
+			color: white; /* Set the text color */
+		}
+
+		df-messenger {
 			z-index: 1029;
 			position: fixed;
 			top: 16px; /* Aligning with the bottom of the navbar */
 			right: 0;
 			width: 400px; /* Chatbot sidebar width */
 			height: calc(100% - 56px); /* Height adjusted to align with navbar */
+			df-messenger-titlebar-background:  #e0e0e0; /* Updated to grey */
 		}
 
         /* Styling for content sections */
