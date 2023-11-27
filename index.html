@@ -76,10 +76,16 @@
 		}
 
 		df-messenger {
-   --df-messenger-button-titlebar-color: #0d4295;
-   --df-messenger-chat-background-color: #fafafa;
-   --df-messenger-send-icon: #0d4295;
-  }
+		   --df-messenger-button-titlebar-color: #0d4295;
+		   --df-messenger-chat-background-color: #fafafa;
+		   --df-messenger-send-icon: #0d4295;
+			z-index: 1029;
+			position: fixed;
+			top: 16px; /* Aligning with the bottom of the navbar */
+			right: 0;
+			width: 400px; /* Chatbot sidebar width */
+			height: calc(100% - 56px); /* Height adjusted to align with navbar */
+		}
 
         /* Styling for content sections */
         .container {
