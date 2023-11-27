@@ -9,18 +9,19 @@
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
-            padding-top: 56px; /* Space for fixed navbar */
+            padding-top: 56px;
             padding-right: 400px; /* Space for chatbot sidebar */
             box-sizing: border-box;
             overflow-x: hidden; /* Prevents horizontal scroll */
         }
 
         .navbar {
-            background-color: #012169; /* Primary color */
+            background-color: #e0e0e0; /* Updated to grey */
             position: fixed;
             width: calc(100% - 400px); /* Navbar width minus chatbot sidebar */
             z-index: 1030;
             top: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Added shadow */
         }
 
         .navbar-brand img {
@@ -28,7 +29,7 @@
         }
 
         footer {
-            background-color: #333; /* Secondary color */
+            background-color: #333;
             color: white;
             padding: 4px 0; /* Reduced padding */
             text-align: center;
@@ -38,7 +39,7 @@
             z-index: 1020;
             font-size: 80%; /* Reduced font size */
         }
-		
+
 		df-messenger {
             z-index: 1029;
             position: fixed;
@@ -47,25 +48,16 @@
             width: 400px; /* Width of the chatbot sidebar */
             height: 100%;
         }
-		
-		df-messenger {
-            --df-messenger-bot-message: #000000; /* Bot message text color */
-            --df-messenger-button-titlebar-color: #61A0D5; /* Lighter title bar color */
-            --df-messenger-chat-background-color: #fafafa; /* Chat background color */
-            --df-messenger-font-color: #000000; /* Chat font color */
-            --df-messenger-send-icon: #878fac; /* Send icon color */
-            --df-messenger-user-message: #479b3d; /* User message bubble color */
-        }
 
         /* Styling for content sections */
         .section {
             background-color: #f4f4f4;
             color: #012169;
-            margin-bottom: 20px;
+            margin: 20px 0;
             padding: 20px;
             border-radius: 8px;
             position: relative;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow for attractiveness */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Consistent shadow as the home section */
         }
 
         .section img {
@@ -124,25 +116,25 @@
         <h2>Welcome to Abacus Cambridge Partners</h2>
         <p>Your partner in innovative technology solutions.</p>
     </section>
-	<section id="products">
+	<section id="products" class="section">
 		<img src="./technology-stack.png" alt="Technology Stack">
         <h2>Our Products</h2>
         <p>Explore our range of products that leverage cutting-edge technology to drive business growth.</p>
     </section>
 
-    <section id="workflow">
+    <section id="workflow" class="section">
 		<img src="./technology-stack.png" alt="Technology Stack">
         <h2>Our Workflow</h2>
         <p>Our streamlined workflow ensures efficiency and quality in every project.</p>
     </section>
 
-    <section id="architecture">
+    <section id="architecture" class="section">
 		<img src="./technology-stack.png" alt="Technology Stack">
         <h2>Architecture</h2>
         <p>Our architecture is built on the principles of scalability and reliability.</p>
     </section>
 
-    <section id="integrations">
+    <section id="integrations" class="section">
 		<img src="./technology-stack.png" alt="Technology Stack">
         <h2>Integrations</h2>
         <p>Seamless integrations to enhance and expand your existing systems.</p>
