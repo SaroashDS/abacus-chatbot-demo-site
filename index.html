@@ -31,8 +31,37 @@
 
 
 		.navbar-dark .navbar-nav .nav-link {
-			color: #000; /* Darker color for better visibility */
+			color: #0f4394; /* Darker color for better visibility */
 		}
+		
+		/* Navbar link styles */
+		.navbar-nav .nav-link {
+			color: #0f4394; /* All links black */
+			transition: color 0.3s; /* Smooth transition for color change */
+		}
+
+		.navbar-nav .nav-link:hover,
+		.navbar-nav .nav-link:focus {
+			color: #fff; /* Links white on hover/focus */
+			text-decoration: none; /* Remove default underline */
+		}
+
+		.navbar-nav .nav-link::after {
+			content: '';
+			display: block;
+			margin: auto;
+			height: 2px;
+			width: 0px;
+			background: transparent;
+			transition: width 0.5s ease, background-color 0.5s ease;
+		}
+
+		.navbar-nav .nav-link:hover::after,
+		.navbar-nav .nav-link:focus::after {
+			width: 100%; /* Full width on hover/focus */
+			background: #fff; /* White underline */
+		}
+
 
         footer {
 			background-color: #333;
@@ -44,6 +73,30 @@
 			width: calc(100% - 400px);
 			z-index: 1020;
 			font-size: 80%; /* Reduced font size */
+		}
+
+		df-messenger {
+			/* Other styles */
+			--df-messenger-button-titlebar-color: #0f4394; /* Dark blue title bar */
+		}
+
+		df-messenger::shadow df-messenger-chat .df-messenger-titlebar {
+			height: 56px; /* Increase height of the title bar */
+			font-size: 16px; /* Adjust font size as needed */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		/* Force the title within the chatbot to be "Try Me Now" */
+		df-messenger::shadow df-messenger-chat .df-messenger-titlebar div[role="heading"] {
+			font-size: 0 !important; /* Hide the original text by setting font size to 0 */
+		}
+
+		df-messenger::shadow df-messenger-chat .df-messenger-titlebar div[role="heading"]:after {
+			content: 'Try Me Now'; /* Add new text */
+			font-size: 16px !important; /* Set the font size back to normal for new text */
+			color: white; /* Set the text color */
 		}
 
 		df-messenger {
@@ -115,11 +168,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-            <li class="nav-item"><a class="nav-link" href="#workflow">Workflow</a></li>
-            <li class="nav-item"><a class="nav-link" href="#architecture">Architecture</a></li>
-            <li class="nav-item"><a class="nav-link" href="#integrations">Integrations</a></li>
+            <li class="nav-item"><a class="nav-link" href="#home"><strong>Home</strong></a></li>
+            <li class="nav-item"><a class="nav-link" href="#products"><strong>Products</strong></a></li>
+            <li class="nav-item"><a class="nav-link" href="#workflow"><strong>Workflow</strong></a></li>
+            <li class="nav-item"><a class="nav-link" href="#architecture"><strong>Architecture</strong></a></li>
+            <li class="nav-item"><a class="nav-link" href="#integrations"><strong>Integrations</strong></a></li>
         </ul>
     </div>
 </nav>
@@ -172,10 +225,10 @@
 			</div>
 		</div>
 		<div style="border-bottom: 1px dashed #cccccc; margin: 10px 0;"></div>
-		<div style="text-align: center; display: block; margin-bottom: 10px;">
-			<a href="https://abacuscambridge.com" style="color: #005a9e; text-decoration: none; font-weight: bold;">Visit Our Website</a>
+		<div style="text-align: center; display: block; margin-bottom: 5px;">
+			<a href="https://abacuscambridge.com" style="color: #0f4394; text-decoration: none; font-weight: bold;">Visit Our Website</a>
 		</div>
-        <div style="font-size: 12px; color: #999999; text-align: center; margin-top: 10px;">
+        <div style="font-size: 12px; color: #999999; text-align: center; margin-top: 5px;">
             &copy; Abacus Cambridge Partners. All rights reserved.
         </div>
     </div>
