@@ -9,13 +9,14 @@
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
-            padding-top: 56px;
+            padding-top: 56px; /* Space for fixed navbar */
             padding-right: 400px; /* Space for chatbot sidebar */
             box-sizing: border-box;
+            overflow-x: hidden; /* Prevents horizontal scroll */
         }
 
         .navbar {
-            background-color: #012169;
+            background-color: #012169; /* Primary color */
             position: fixed;
             width: calc(100% - 400px); /* Navbar width minus chatbot sidebar */
             z-index: 1030;
@@ -27,17 +28,18 @@
         }
 
         footer {
-            background-color: #333;
+            background-color: #333; /* Secondary color */
             color: white;
-            padding: 10px 0;
+            padding: 4px 0; /* Reduced padding */
             text-align: center;
             position: fixed;
             bottom: 0;
             width: calc(100% - 400px);
             z-index: 1020;
+            font-size: 80%; /* Reduced font size */
         }
-
-        df-messenger {
+		
+		df-messenger {
             z-index: 1029;
             position: fixed;
             bottom: 0;
@@ -45,35 +47,32 @@
             width: 400px; /* Width of the chatbot sidebar */
             height: 100%;
         }
-
-        /* Open the chatbot by default */
-        df-messenger {
-            --df-messenger-bot-message: #878fac;
-            --df-messenger-button-titlebar-color: #5678a0;
-            --df-messenger-chat-background-color: #fafafa;
-            --df-messenger-font-color: white;
-            --df-messenger-send-icon: #878fac;
-            --df-messenger-user-message: #479b3d;
-        }
-
-        df-messenger::shadow .df-messenger-wrapper {
-            height: 100vh;
+		
+		df-messenger {
+            --df-messenger-bot-message: #000000; /* Bot message text color */
+            --df-messenger-button-titlebar-color: #61A0D5; /* Lighter title bar color */
+            --df-messenger-chat-background-color: #fafafa; /* Chat background color */
+            --df-messenger-font-color: #000000; /* Chat font color */
+            --df-messenger-send-icon: #878fac; /* Send icon color */
+            --df-messenger-user-message: #479b3d; /* User message bubble color */
         }
 
         /* Styling for content sections */
         .section {
             background-color: #f4f4f4;
             color: #012169;
-            margin: 20px 0;
+            margin-bottom: 20px;
             padding: 20px;
             border-radius: 8px;
             position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow for attractiveness */
         }
 
         .section img {
             width: 100%;
             height: auto;
             border-radius: 8px;
+            margin-bottom: 20px; /* Space between image and text */
         }
 
         @media (max-width: 991px) {
@@ -86,7 +85,7 @@
             footer {
                 width: 100%;
             }
-             df-messenger {
+            df-messenger {
 				z-index: 999;
 				position: fixed;
 				bottom: 0;
@@ -101,21 +100,7 @@
 
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="#">
-        <img src="https://27058982.fs1.hubspotusercontent-eu1.net/hubfs/27058982/log-dark.png" alt="Logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-            <li class="nav-item"><a class="nav-link" href="#workflow">Workflow</a></li>
-            <li class="nav-item"><a class="nav-link" href="#architecture">Architecture</a></li>
-            <li class="nav-item"><a class="nav-link" href="#integrations">Integrations</a></li>
-        </ul>
-    </div>
+    <!-- Navbar content -->
 </nav>
 
 <!-- Main Content -->
@@ -148,6 +133,7 @@
         <h2>Integrations</h2>
         <p>Seamless integrations to enhance and expand your existing systems.</p>
     </section>
+
 </div>
 
 <!-- Footer -->
@@ -158,17 +144,17 @@
 				CONTACT INFO
 			</div>
 			<div style="text-align: left;">
-				<p style="margin: 5px 0;"><strong>London Office:</strong><br>Two Kingdom Street, 6th Floor, Paddington, London W2 6BD<br>+44 (0) 203 580 4343</p>
-				<p style="margin: 5px 0;"><strong>New York Office:</strong><br>405 Lexington Avenue, The Chrysler Building, New York 10174<br>+1 347 701 4221</p>
-				<p style="margin: 5px 0;"><strong>Dubai Office:</strong><br>Liberty House, Sheikh Zayed Rd, Trade Centre, DIFC, Dubai 417624<br>+971 4 446 1890</p>
-				<p style="margin: 5px 0;"><strong>Riyadh Office:</strong><br>Akaria, Olayya Street, PO Box 295879, Riyadh 11351<br>+966 11 4600 670</p>
+				<p style="margin: 5px 0;"><strong>London Office: </strong> Two Kingdom Street, 6th Floor, Paddington, London W2 6BD +44 (0) 203 580 4343</p>
+				<p style="margin: 5px 0;"><strong>New York Office: </strong> 405 Lexington Avenue, The Chrysler Building, New York 10174 +1 347 701 4221</p>
+				<p style="margin: 5px 0;"><strong>Dubai Office: </strong> Liberty House, Sheikh Zayed Rd, Trade Centre, DIFC, Dubai 417624 +971 4 446 1890</p>
+				<p style="margin: 5px 0;"><strong>Riyadh Office: </strong> Akaria, Olayya Street, PO Box 295879, Riyadh 11351 +966 11 4600 670</p>
 			</div>
 		</div>
-		<div style="border-bottom: 1px dashed #cccccc; margin: 20px 0;"></div>
-		<div style="text-align: center; display: block; margin-bottom: 20px;">
+		<div style="border-bottom: 1px dashed #cccccc; margin: 10px 0;"></div>
+		<div style="text-align: center; display: block; margin-bottom: 10px;">
 			<a href="https://abacuscambridge.com" style="color: #005a9e; text-decoration: none; font-weight: bold;">Visit Our Website</a>
 		</div>
-        <div style="font-size: 12px; color: #999999; text-align: center; margin-top: 30px;">
+        <div style="font-size: 12px; color: #999999; text-align: center; margin-top: 10px;">
             &copy; Abacus Cambridge Partners. All rights reserved.
         </div>
     </div>
@@ -198,7 +184,7 @@ window.addEventListener('dfMessengerLoaded', function (event) {
     // Auto-open the chat widget
     const dfMessenger = document.querySelector('df-messenger');
     dfMessenger.render();
-    dfMessenger.expand(); // Add this line to expand the chat widget by default
+    dfMessenger.setAttribute("expanded", "true"); // Keep the chat widget open
 });
 </script>
 
