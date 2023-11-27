@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abacus Cambridge Partners</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box;
+        }
+        .header { 
+            background-color: #f8f9fa; 
+            padding: 10px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .header img { 
+            height: 50px; 
+        }
+        .nav-links { 
+            list-style: none; 
+            display: flex; 
+        }
+        .nav-links li { 
+            margin-left: 20px; 
+        }
+        .nav-links a { 
+            text-decoration: none; 
+            color: black; 
+        }
+        .carousel { 
+            height: 500px; 
+            background-color: #ddd; 
+            text-align: center; 
+            line-height: 500px; 
+            font-size: 24px; 
+            color: #555; 
+        }
+        .footer { 
+            background-color: #f8f9fa; 
+            padding: 20px; 
+            text-align: center; 
+        }
+        /* Chatbot styling */
+        df-messenger { 
+            z-index: 999; 
+            position: fixed; 
+            bottom: 0; 
+            right: 0; 
+            top: 0; 
+            width: 350px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://27058982.fs1.hubspotusercontent-eu1.net/hubfs/27058982/log-dark.png" alt="Abacus Cambridge Partners">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+        </ul>
+    </div>
+
+    <div class="carousel" id="home">
+        <!-- Carousel content here -->
+        <p>Carousel Placeholder</p>
+    </div>
+
+    <div class="content" id="products">
+        <!-- Products content here -->
+    </div>
+
+    <div class="content" id="architecture">
+        <!-- Architecture content here -->
+    </div>
+
+    <footer class="footer">
+        <!-- Footer content here -->
+    </footer>
+
+    <!-- Chatbot Script -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    <df-messenger
+        project-id="abacus-demo-2023"
+        agent-id="deb71627-0d70-4c43-beab-ec4f14a25e64"
+        language-code="en">
+        <df-messenger-chat chat-title="Abacus Demo"></df-messenger-chat>
+    </df-messenger>
+</body>
+</html>
