@@ -228,16 +228,32 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <!-- Dialogflow Messenger script -->
-<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
-
 <script>
 // Ensure df-messenger is loaded
-window.addEventListener('dfMessengerLoaded', function (event) {
-    // Auto-open the chat widget
-    const dfMessenger = document.querySelector('df-messenger');
-    dfMessenger.render();
-    dfMessenger.setAttribute("expanded", "true"); // Keep the chat widget open
+document.addEventListener('dfMessengerLoaded', function (event) {
+  const dfMessenger = document.querySelector('df-messenger');
+  const style = document.createElement('style');
+  style.textContent = '
+    df-messenger-chat {
+      --df-messenger-titlebar-height: 72px;
+    }
+    df-messenger-chat .title-bar {
+      background-color: var(--df-messenger-button-titlebar-color);
+      color: white;
+      font-size: 16px;
+      line-height: 72px; /* Adjust the line height to match the title bar height */
+    }
+  ';
+  // Inject styles into the df-messenger shadow DOM
+  dfMessenger.shadowRoot.appendChild(style);
+
+  // Update the title text to "Try Me Now"
+  const titleBar = dfMessenger.shadowRoot.querySelector('.title-bar');
+  if (titleBar) {
+    titleBar.textContent = 'Try Me Now'; // This sets the title
+  }
 });
+
 </script>
 
 </body>
