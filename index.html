@@ -3,108 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abacus Cambridge Partnersv1</title>
+    <title>Abacus Cambridge Partners</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body, h1, h2, h3, p { margin: 0; padding: 0; }
-        body { font-family: Arial, sans-serif; }
-        .header { 
-            background-color: #333; 
-            color: #fff; 
-            padding: 10px 20px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-        }
-        .header img { 
-            height: 50px; 
-        }
-        .nav-links { 
-            list-style: none; 
-            display: flex; 
-        }
-        .nav-links li { 
-            margin-left: 20px; 
-        }
-        .nav-links a { 
-            text-decoration: none; 
-            color: #fff; 
-            transition: color 0.3s ease-in-out;
-        }
-        .nav-links a:hover {
-            color: #f8f9fa;
-        }
-        .carousel { 
-            height: 300px; 
-            background-color: #ddd; 
-            text-align: center; 
-            line-height: 300px; 
-            font-size: 24px; 
-            color: #555; 
-        }
-        .footer { 
-            background-color: #333; 
-            color: #fff;
-            padding: 20px; 
-            text-align: center; 
-        }
-        /* Chatbot styling */
-        df-messenger { 
-            z-index: 999; 
-            position: fixed; 
-            bottom: 0; 
-            right: 0; 
-            --df-messenger-bot-message: #878fac;
-            --df-messenger-button-titlebar-color: #df9b56;
-            --df-messenger-chat-background-color: #fafafa;
-        }
-        /* Sticky footer */
-        html, body {
-            height: 100%;
-        }
-        .content-wrap {
-            min-height: calc(100% - 40px); /* Footer height */
-            margin-bottom: -40px; /* Negative value of footer height */
-        }
-        .footer, .content-wrap:after {
-            height: 40px;
-        }
+        /* Additional CSS styles will go here */
     </style>
 </head>
 <body>
-    <div class="content-wrap">
-        <div class="header">
-            <img src="https://27058982.fs1.hubspotusercontent-eu1.net/hubfs/27058982/log-dark.png" alt="Abacus Cambridge Partners">
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#architecture">Architecture</a></li>
-            </ul>
-        </div>
 
-        <div id="home" class="carousel">
-            <!-- Carousel content here -->
-            <p>Carousel Placeholder</p>
-        </div>
-
-        <!-- Content sections for Products and Architecture -->
-        <div id="products" class="carousel">
-            <p>Products Placeholder</p>
-        </div>
-        <div id="architecture" class="carousel">
-            <p>Architecture Placeholder</p>
-        </div>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="PATH_TO_LOGO" alt="Logo" style="height: 40px;"> <!-- Replace PATH_TO_LOGO with the actual path -->
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#workflow">Workflow</a></li>
+            <li class="nav-item"><a class="nav-link" href="#architecture">Architecture</a></li>
+            <li class="nav-item"><a class="nav-link" href="#integrations">Integrations</a></li>
+        </ul>
     </div>
+</nav>
 
-    <footer class="footer">
-        <!-- Footer content here -->
-    </footer>
+<!-- Carousel for Product Showcase -->
+<div id="productCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Carousel items will go here -->
+</div>
 
-    <!-- Chatbot Script -->
-    <df-messenger
-        project-id="abacus-demo-2023"
-        agent-id="deb71627-0d70-4c43-beab-ec4f14a25e64"
-        language-code="en">
-    </df-messenger>
+<!-- Main Content -->
+<div class="container">
+    <!-- Additional content will go here -->
+</div>
 
+<!-- Footer -->
+<footer class="footer bg-dark text-white">
+    <div class="container">
+        <p>Contact info and other details from abacucambridge.com</p>
+    </div>
+</footer>
+
+<!-- Chatbot -->
+<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+<df-messenger project-id="abacus-demo-2023" agent-id="deb71627-0d70-4c43-beab-ec4f14a25e64" language-code="en">
+    <df-messenger-chat chat-title="Abacus Demo"></df-messenger-chat>
+</df-messenger>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
