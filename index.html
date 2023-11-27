@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding-top: 56px;
-            padding-right: 400px; /* Space for chatbot sidebar */
-            box-sizing: border-box;
-            overflow-x: hidden; /* Prevents horizontal scroll */
-        }
+			font-family: 'Arial', sans-serif;
+			margin: 0;
+			padding-top: 56px; /* Space for fixed navbar */
+			padding-right: 400px; /* Space for chatbot sidebar */
+			padding-bottom: 400px;
+			box-sizing: border-box;
+			overflow-x: hidden; /* Prevents horizontal scroll */
+		}
 
-        .navbar {
+		.navbar {
             background-color: #e0e0e0; /* Updated to grey */
             position: fixed;
             width: calc(100% - 400px); /* Navbar width minus chatbot sidebar */
@@ -28,64 +29,78 @@
             height: 40px;
         }
 
+
+		.navbar-dark .navbar-nav .nav-link {
+			color: #000; /* Darker color for better visibility */
+		}
+
         footer {
-            background-color: #333;
-            color: white;
-            padding: 4px 0; /* Reduced padding */
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: calc(100% - 400px);
-            z-index: 1020;
-            font-size: 80%; /* Reduced font size */
-        }
+			background-color: #333;
+			color: white;
+			padding: 4px 0; /* Reduced padding */
+			text-align: center;
+			position: fixed;
+			bottom: 0;
+			width: calc(100% - 400px);
+			z-index: 1020;
+			font-size: 80%; /* Reduced font size */
+		}
 
 		df-messenger {
-            z-index: 1029;
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            width: 400px; /* Width of the chatbot sidebar */
-            height: 100%;
-        }
+			z-index: 1029;
+			position: fixed;
+			top: 16px; /* Aligning with the bottom of the navbar */
+			right: 0;
+			width: 400px; /* Chatbot sidebar width */
+			height: calc(100% - 56px); /* Height adjusted to align with navbar */
+			df-messenger-titlebar-background:  #e0e0e0; /* Updated to grey */
+		}
 
         /* Styling for content sections */
-        .section {
-            background-color: #f4f4f4;
-            color: #012169;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 8px;
-            position: relative;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Consistent shadow as the home section */
-        }
+        .container {
+			padding-top: 20px; /* Space below the navbar */
+		}
 
-        .section img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px; /* Space between image and text */
-        }
+		.section {
+			background-color: #f4f4f4;
+			color: #012169;
+			margin-bottom: 20px;
+			padding: 20px;
+			border-radius: 8px;
+			position: relative;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		.section img {
+			width: 100%;
+			height: auto;
+			border-radius: 8px;
+			margin-bottom: 20px; /* Space between image and text */
+		}
+
 
         @media (max-width: 991px) {
-            .navbar {
-                width: 100%;
-            }
-            body {
-                padding-right: 0;
-            }
-            footer {
-                width: 100%;
-            }
-            df-messenger {
-				z-index: 999;
-				position: fixed;
-				bottom: 0;
-				right: 0;
-				top: 0;
-				width: 350px;
-			  }
-        }
+    body {
+        padding-top: 56px; /* Reset padding for smaller screens */
+        padding-right: 0; /* Chatbot will overlay content */
+    }
+
+    .navbar {
+        width: 100%; /* Full width navbar */
+        position: static; /* Navbar scrolls with the page */
+    }
+
+    footer {
+        width: 100%; /* Full width footer */
+        position: static; /* Footer scrolls with the page */
+    }
+
+    df-messenger {
+        width: 100%; /* Full width chatbot */
+        height: auto;
+        position: static; /* Chatbot scrolls with the page */
+    }
+}
     </style>
 </head>
 <body>
