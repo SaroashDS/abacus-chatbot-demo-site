@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abacus Cambridge Partners</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box;
-        }
+        body, h1, h2, h3, p { margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; }
         .header { 
-            background-color: #f8f9fa; 
+            background-color: #333; 
+            color: #fff; 
             padding: 10px 20px; 
             display: flex; 
             justify-content: space-between; 
@@ -30,18 +27,23 @@
         }
         .nav-links a { 
             text-decoration: none; 
-            color: black; 
+            color: #fff; 
+            transition: color 0.3s ease-in-out;
+        }
+        .nav-links a:hover {
+            color: #f8f9fa;
         }
         .carousel { 
-            height: 500px; 
+            height: 300px; 
             background-color: #ddd; 
             text-align: center; 
-            line-height: 500px; 
+            line-height: 300px; 
             font-size: 24px; 
             color: #555; 
         }
         .footer { 
-            background-color: #f8f9fa; 
+            background-color: #333; 
+            color: #fff;
             padding: 20px; 
             text-align: center; 
         }
@@ -51,32 +53,46 @@
             position: fixed; 
             bottom: 0; 
             right: 0; 
-            top: 0; 
-            width: 350px; 
+            --df-messenger-bot-message: #878fac;
+            --df-messenger-button-titlebar-color: #df9b56;
+            --df-messenger-chat-background-color: #fafafa;
+        }
+        /* Sticky footer */
+        html, body {
+            height: 100%;
+        }
+        .content-wrap {
+            min-height: calc(100% - 40px); /* Footer height */
+            margin-bottom: -40px; /* Negative value of footer height */
+        }
+        .footer, .content-wrap:after {
+            height: 40px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="https://27058982.fs1.hubspotusercontent-eu1.net/hubfs/27058982/log-dark.png" alt="Abacus Cambridge Partners">
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#architecture">Architecture</a></li>
-        </ul>
-    </div>
+    <div class="content-wrap">
+        <div class="header">
+            <img src="https://27058982.fs1.hubspotusercontent-eu1.net/hubfs/27058982/log-dark.png" alt="Abacus Cambridge Partners">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+            </ul>
+        </div>
 
-    <div class="carousel" id="home">
-        <!-- Carousel content here -->
-        <p>Carousel Placeholder</p>
-    </div>
+        <div id="home" class="carousel">
+            <!-- Carousel content here -->
+            <p>Carousel Placeholder</p>
+        </div>
 
-    <div class="content" id="products">
-        <!-- Products content here -->
-    </div>
-
-    <div class="content" id="architecture">
-        <!-- Architecture content here -->
+        <!-- Content sections for Products and Architecture -->
+        <div id="products" class="carousel">
+            <p>Products Placeholder</p>
+        </div>
+        <div id="architecture" class="carousel">
+            <p>Architecture Placeholder</p>
+        </div>
     </div>
 
     <footer class="footer">
@@ -84,12 +100,11 @@
     </footer>
 
     <!-- Chatbot Script -->
-    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
     <df-messenger
         project-id="abacus-demo-2023"
         agent-id="deb71627-0d70-4c43-beab-ec4f14a25e64"
         language-code="en">
-        <df-messenger-chat chat-title="Abacus Demo"></df-messenger-chat>
     </df-messenger>
+
 </body>
 </html>
