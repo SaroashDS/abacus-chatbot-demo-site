@@ -108,6 +108,19 @@
 			border-radius: 8px;
 			margin-bottom: 20px; /* Space between image and text */
 		}
+		.section .flow-diagram {
+			max-width: 75%; 
+			max-height: 75%;/* Adjust this value to scale the size of the diagram */
+			display: block; /* Images are block level to take max-width into account */
+			margin: 0 0 20px 0;
+		}
+		.section .large-flow-diagram {
+			max-width: 50%; /* Adjust this value as needed for larger diagrams */
+			
+		}
+		.section .extra-large-flow-diagram {
+			max-width: 30%; 
+		}
 
 
         @media (max-width: 991px) {
@@ -124,6 +137,7 @@
     footer {
         width: 100%; /* Full width footer */
         position: static; /* Footer scrolls with the page */
+		background-color: #f4f4f4;
     }
 
     df-messenger {
@@ -172,17 +186,17 @@
 
     <section id="workflow" class="section">
 	    <h3>Default Flow Diagram</h3>
-		<img src="./default-flow.png" alt="Default Flow Diagram">
+		<img src="./default-flow.png" alt="Default Flow Diagram" class="flow-diagram large-flow-diagram">
+		<h3>Auth Abacus Email Flow Diagram</h3>
+		<img src="./auth-abacus-email-flow.png" alt="Auth Abacus Email Flow Diagram" class="flow-diagram">
 	    <h3>Schedule a Meeting Flow Diagram</h3>
-		<img src="./schedule-a-meeting-flow.png" alt="Schedule a Meeting Flow Diagram">
-	    <h3>Auth Abacus Email Flow Diagram</h3>
-		<img src="./auth-abacus-email-flow.png" alt="Auth Abacus Email Flow Diagram">
+		<img src="./schedule-a-meeting-flow.png" alt="Schedule a Meeting Flow Diagram" class="flow-diagram extra-large-flow-diagram">
 	    <h3>Project Insights Flow Diagram</h3>
-		<img src="./project-insights-flow.png" alt="Project Insights Flow Diagram">
+		<img src="./projects-insights-flow.png" alt="Project Insights Flow Diagram" class="flow-diagram extra-large-flow-diagram">
 	    <h3>Anything Else Flow Diagram</h3>
-		<img src="./anything-else-flow.png" alt="Anything Else Flow Diagram">
+		<img src="./anything-else-flow.png" alt="Anything Else Flow Diagram" class="flow-diagram large-flow-diagram">
 	    <h3>Survey Flow Diagram</h3>
-		<img src="./survey-flow.png" alt="Survey Flow Diagram">
+		<img src="./survey-flow.png" alt="Survey Flow Diagram" class="flow-diagram extra-large-flow-diagram">
         <h2>Conversation Workflow</h2>
         <p>Our streamlined workflow ensures efficiency and quality in every project.</p>
     </section>
@@ -214,22 +228,8 @@
 <!-- Footer -->
 <footer>
     <div class="container">
-        <div>
-			<div>
-				CONTACT INFO
-			</div>
-			<div style="text-align: left;">
-				<p style="margin: 5px 0;"><strong>London Office: </strong> Two Kingdom Street, 6th Floor, Paddington, London W2 6BD +44 (0) 203 580 4343</p>
-				<p style="margin: 5px 0;"><strong>New York Office: </strong> 405 Lexington Avenue, The Chrysler Building, New York 10174 +1 347 701 4221</p>
-				<p style="margin: 5px 0;"><strong>Dubai Office: </strong> Liberty House, Sheikh Zayed Rd, Trade Centre, DIFC, Dubai 417624 +971 4 446 1890</p>
-				<p style="margin: 5px 0;"><strong>Riyadh Office: </strong> Akaria, Olayya Street, PO Box 295879, Riyadh 11351 +966 11 4600 670</p>
-			</div>
-		</div>
-		<div style="border-bottom: 1px dashed #cccccc; margin: 10px 0;"></div>
-		<div style="text-align: center; display: block; margin-bottom: 5px;">
-			<a href="https://abacuscambridge.com" style="color: #0f4394; text-decoration: none; font-weight: bold;">Visit Our Website</a>
-		</div>
-        <div style="font-size: 12px; color: #999999; text-align: center; margin-top: 5px;">
+
+        <div style="font-size: 12px; color: #999999; text-align: center;">
             &copy; Abacus Cambridge Partners. All rights reserved.
         </div>
     </div>
@@ -257,26 +257,7 @@
 // Ensure df-messenger is loaded
 document.addEventListener('dfMessengerLoaded', function (event) {
   const dfMessenger = document.querySelector('df-messenger');
-  const style = document.createElement('style');
-  style.textContent = '
-    df-messenger-chat {
-      --df-messenger-titlebar-height: 72px;
-    }
-    df-messenger-chat .title-bar {
-      background-color: var(--df-messenger-button-titlebar-color);
-      color: white;
-      font-size: 16px;
-      line-height: 72px; /* Adjust the line height to match the title bar height */
-    }
-  ';
-  // Inject styles into the df-messenger shadow DOM
-  dfMessenger.shadowRoot.appendChild(style);
-
-  // Update the title text to "Try Me Now"
-  const titleBar = dfMessenger.shadowRoot.querySelector('.title-bar');
-  if (titleBar) {
-    titleBar.textContent = 'Try Me Now'; // This sets the title
-  }
+  
 });
 
 </script>
