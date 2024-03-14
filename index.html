@@ -256,14 +256,17 @@
     </div>
 </footer>
 
-<!-- Chatbot -->
+<!-- Dialogflow Messenger code -->
 <df-messenger
-  project-id="abacus-demo-2023"
-  agent-id="deb71627-0d70-4c43-beab-ec4f14a25e64"
-  language-code="en">
-  <df-messenger-chat
-   chat-title="Try Me Now!">
-  </df-messenger-chat>
+  location="us-central1"
+  project-id="abacus-apigee-demo"
+  agent-id="6d352e08-cc2d-409d-aa29-55ff30fcffc9"
+  language-code="en"
+  max-query-length="-1"
+  allow-feedback="all">
+  <df-messenger-chat-bubble
+   chat-title="Abacus Demo">
+  </df-messenger-chat-bubble>
 </df-messenger>
 
 <!-- Scripts for Bootstrap components -->
@@ -272,7 +275,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<!-- Dialogflow Messenger script -->
+<!-- Include Dialogflow Messenger JS -->
 <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 
 <script>
