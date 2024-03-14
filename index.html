@@ -255,6 +255,8 @@
 </footer>
 
 <!-- Dialogflow Messenger code -->
+<link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 <df-messenger
   location="us-central1"
   project-id="abacus-apigee-demo"
@@ -266,6 +268,16 @@
    chat-title="Abacus Demo">
   </df-messenger-chat>
 </df-messenger>
+<style>
+  df-messenger {
+    z-index: 999;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    width: 350px;
+  }
+</style>
 
 <!-- Scripts for Bootstrap components -->
 <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=en_US"></script>
@@ -273,8 +285,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<!-- Include Dialogflow Messenger JS -->
-<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+
 
 <script>
 // Ensure df-messenger is loaded
